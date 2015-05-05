@@ -7,7 +7,7 @@ template: article.jade
 
 ![Logo de Gogs](gogs-lg.png)
 
-Gogs est un service Git auto-hébergé pour gérer le versionning de vos projets de manière simple, via une interface ergonomique, il est assez léger pour être installé sur votre Raspberry. Je vais vous détailler ici la procédure pour l'installer et y accéder depuis le web. 
+Gogs est un service Git auto-hébergé pour gérer le versionning de vos projets de manière simple, via une interface ergonomique, il est assez léger pour être installé sur votre Raspberry. Je vais vous détailler ici la procédure pour l'installer et y accéder depuis le web. Test
 
 # Configuration requise
 
