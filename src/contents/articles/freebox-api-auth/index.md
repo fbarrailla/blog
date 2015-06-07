@@ -122,8 +122,8 @@ Pour la suite nous allons automatiser la récupération du jeton de session afin
 2. On effectue les appels nécessaires à la récupération de la clé de session
 
 	```javascript
-	// inclusion d'une lib de cryptage
-	// pour générer le mot de passe
+	// inclusion de la lib de cryptage
+	// de NodeJS pour générer le mot de passe
 	var crypto = require('crypto')
 	
 	var APP_TOKEN = 'la valeur du app_token récupéré';
