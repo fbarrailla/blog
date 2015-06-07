@@ -1,0 +1,28 @@
+{
+  "locals": {
+    "url": "http://localhost:8080",
+    "name": "François Barrailla",
+    "owner": "François Barrailla",
+    "description": "blog d'un développeur web"
+  },
+  "plugins": [
+    "./plugins/paginator.coffee",
+    "../node_modules/wintersmith-l10n/src/index.coffee"
+  ],
+  "locale": "fr",
+  "require": {
+    "moment": "moment",
+    "_": "underscore",
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "smartLists": true,
+    "smartypants": true
+  },
+  "paginator": {
+    "perPage": 3
+  }
+}

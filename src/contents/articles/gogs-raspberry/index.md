@@ -9,14 +9,14 @@ template: article.jade
 
 Gogs est un service Git auto-hébergé pour gérer le versionning de vos projets de manière simple, via une interface ergonomique, il est assez léger pour être installé sur votre Raspberry. Je vais vous détailler ici la procédure pour l'installer et y accéder depuis le web.
 
-# Configuration requise
+## Configuration requise
 
 Dans un premier temps nous allons créer un utilisateur appelé git et avec lequel nous allons effectuer toutes les opérations d'installation de Gogs car c'est avec lui que nous lancerons le service.
 
 	$ sudo adduser git
 	$ su git
 
-## Git + MySql
+### Git + MySql
 
 Avant d'installer Gogs, il faut s'assurer d'avoir installé un serveur MySql et Git sur votre Raspberry Pi. Si ça n'est pas le cas, tappez la commande suivante depuis votre terminal connecté en SSH à votre Raspberry.
 	
@@ -31,7 +31,7 @@ Maintenant il suffit de créer une base de données que l'on nommera `Gogs`
 	mysql> CREATE DATABASE gogs CHARACTER SET utf8 COLLATE utf8_bin;
 	mysql> EXIT
 
-## Golang
+### Golang
 
 Go est le language qui va servir à installer Gogs sur votre environnement. Comme nous avons besoin d'une version > 1.2, nous ne pouvons pas passer par `apt-get install` (dommage...) il va falloir le compiler manuellement la dernière version.
 
@@ -67,7 +67,7 @@ Maintenant l'instruction `go` doit fonctionner, pour vérifier que l'installatio
 
 	$ go version
 
-# Installation de Gogs
+## Installation de Gogs
 
 Une fois votre environnement prêt, il reste à récupérer et compiler Gogs pour votre Raspberry Pi.
 
@@ -90,7 +90,7 @@ La page d'installation de Gogs doit maintenant s'afficher. Après avoir rempli l
 ![Page d'accueil du service](home-screenshot.png)
 
 
-# Accessibilité depuis le web
+## Accessibilité depuis le web
 
 Si vous avez un fournisseur d'accès et un routeur, vous pouvez ouvrir votre serveur privé à l'extérieur en ouvrant le port 3000 (si vous ne l'avez pas changé) depuis la configuration de votre box.
 

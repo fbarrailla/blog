@@ -1,3 +1,3 @@
 # Blog
 
-Articles from my personal [blog](http://blog.francoisbarrailla.com)
+Articles from my personal [blog](http://francoisbarrailla.com)
