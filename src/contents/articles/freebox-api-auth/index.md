@@ -203,7 +203,7 @@ Pour la suite nous allons automatiser la récupération du jeton de session afin
 
 3. On met en place un serveur qui va se charger d'obtenir la clé
 
-	Prenons le cas d'un serveur tout simple qui renvoi le session token lorsqu'on requête `/`.
+	Prenons le cas d'un serveur tout simple qui renvoi le Token de session lorsqu'on requête `http://localhost:4242`.
 	C'est simple à mettre en place avec le framework [Express](http://expressjs.com/)
 
 	```javascript
