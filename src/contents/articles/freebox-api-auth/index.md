@@ -226,3 +226,44 @@ Pour la suite nous allons automatiser la récupération du jeton de session afin
 
 	app.listen(4242)
 	```
+	Maintenant si vous avez envie de requêter directement l'API en JavaScript, ce ne sera pas possible en l'état car elle ne supporte pas les requêtes Cross-Domain... Heureusement qu'on peut tricher en passant par un proxy ;) Dans cet exemple j'utilise [RedBird](https://github.com/OptimalBits/redbird).
+
+	```javascript
+	// [...]
+
+	var redbird = require('redbird')
+
+	app.get('/', function(req, res){
+		res.sendFile( __dirname + '/test.html' )
+	})
+
+	app.get('/token', function(req, res) {
+		// [...]
+	})
+
+	app.listen(4243)
+
+	var proxy = redbird({port: 4242, bunyan: false});
+
+	// Les requêtes vers localhost arrivent sur le router Express
+	proxy.register("localhost", "http://localhost:4243");
+	// Les requêtes vers localhost/api mènent à l'API Freebox
+	proxy.register("localhost/api", "http://mafreebox.free.fr/api/");
+	```
+
+	De cette manière je peux réaliser une requête Ajax authentifiée à l'API (dans mon fichier test.html)
+
+	```javascript
+	fetch('/api/v3/downloads', {
+		headers: {
+			'X-Fbx-App-Auth': {SESSION_TOKEN}
+		}
+	})
+		.then(function(resp){
+			resp.json().then(function(data){
+			 	console.log(data)
+			})
+		})
+	```
+
+	Maintenant à vous de jouer. Le code source de cet exemple est [disponible ici](https://github.com/fbarrailla/freebox_auth).
